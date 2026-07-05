@@ -1,5 +1,5 @@
 {
-  "redirects": [
-    { "source": "/", "destination": "/ui_kits/website/index.html", "permanent": false }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/manutencao.html" }
   ]
 }
