@@ -1,0 +1,254 @@
+/* =====================================================================
+   Cachaçaria Chero — Colors & Type
+   Tokens distilled from the brand catalog, label design, and photography.
+   ===================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+:root {
+  /* ---------- COLOR — Brand Core ---------- */
+  /* Deepened from the first pass toward a wet-wood, aged-barrel dark —
+     the tone of a cellar lit by one bulb, not an "olive drab" flat.  */
+  --chero-olive-900: #322B1F;   /* primary dark — page bg on cover  */
+  --chero-olive-800: #3D3626;   /* card/section bg one notch up     */
+  --chero-olive-700: #4C4330;   /* hover state on dark surfaces     */
+
+  /* Sage olive — the alt page bg (catalog page 2). Reads as "lighter
+     parchment" but still firmly within the muted olive family.      */
+  --chero-sage-500: #8E8E72;    /* secondary surface, banners, tags */
+  --chero-sage-400: #A6A689;    /* subtle border / hairline         */
+  --chero-sage-300: #C2C2A8;    /* faint background tint            */
+
+  /* Cream / parchment — the logo backdrop, ribbons, label fields.   */
+  --chero-cream-100: #F1ECDC;
+  --chero-cream-200: #E8E2CD;
+  --chero-cream-300: #D9D2B6;   /* aged paper edge                  */
+
+  /* ---------- COLOR — Accents ---------- */
+  --chero-gold-500: #F4C234;    /* "Mais vendida" / price badge     */
+  --chero-gold-600: #D6A222;    /* pressed/darker gold              */
+
+  /* Copper — the alambique de cobre (copper still) is the literal
+     instrument of the family's dedication: hand-fired, hand-watched,
+     hours per batch. Use as the site's "working" accent — CTAs,
+     hover states, step markers, link color — everywhere the brand's
+     hands-on craft should read through. Gold stays reserved for the
+     literal price/bestseller stamp, never diluted into a UI color.  */
+  --chero-copper-600: #A6612E;
+  --chero-copper-500: #BE7538;  /* default copper accent            */
+  --chero-copper-400: #D08F52;  /* hover / lighter on dark          */
+
+  --chero-bugio-700: #6A3013;   /* Bugio liqueur / aperitivo tone   */
+  --chero-wine-800: #4B1A1A;    /* Campari / strawberry accent      */
+
+  --chero-leaf-700: #4A7C3A;    /* História banner green, instagram */
+  --chero-leaf-500: #5A9C46;
+
+  --chero-ink-900: #1E1B14;     /* near-black for label print       */
+  --chero-paper-50: #FAF7EE;    /* warmest off-white                */
+  --chero-white: #FFFFFF;
+
+  /* ---------- COLOR — Semantic ---------- */
+  --fg-strong: var(--chero-paper-50);     /* primary text on dark   */
+  --fg-default: #E5DFCB;                  /* body copy on dark      */
+  --fg-muted: #B5AE94;                    /* secondary on dark      */
+  --fg-inverse: var(--chero-ink-900);     /* text on cream/sage     */
+  --fg-inverse-muted: #5C5947;            /* secondary on cream     */
+  --fg-accent: var(--chero-copper-500);
+
+  --bg-page: var(--chero-olive-900);
+  --bg-surface: var(--chero-olive-800);
+  --bg-surface-alt: var(--chero-sage-500);
+  --bg-paper: var(--chero-cream-100);
+
+  --border-subtle: rgba(217, 210, 182, 0.18);  /* cream @ 18%       */
+  --border-strong: var(--chero-cream-300);
+  --divider-dotted: var(--chero-cream-300);
+
+  /* ---------- TYPE — Families ---------- */
+  /* Cursive display, used for product/category names on catalog
+     ("Catálogo", "Limão", "Morango", "Cachaça"). Moved from Allura
+     (delicate, wedding-invitation weight) to Alex Brush — a bolder,
+     more confident stroke that reads like a hand-signed family
+     label rather than formal calligraphy. Still a substitute for the
+     unidentified original; flagged for review.                      */
+  --font-script: 'Alex Brush', 'Snell Roundhand', 'Apple Chancery', cursive;
+
+  /* Serif used for "Cachaça de", "Licor de", taglines, quotes, and
+     section labels. Moved from Cormorant Garamond (delicate, airy)
+     to Playfair Display — higher contrast strokes with real
+     presence, the same family used on heritage spirits labels.
+     Reads as "aged and deliberate" rather than merely decorative.    */
+  --font-serif: 'Playfair Display', 'Georgia', serif;
+
+  /* Sans for body / metadata / price tags / nav. IBM Plex Sans is a
+     working stand-in until the original (likely a humanist sans
+     such as PT Sans or Source Sans) is supplied.                    */
+  --font-sans: 'IBM Plex Sans', 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* ---------- TYPE — Scale ---------- */
+  /* display/h1/h2 use clamp() for responsive sizing: "Catálogo" hero,
+     product name script, section headings like "Cachaça".            */
+  --fs-display: clamp(72px, 9vw, 132px);   /* @kind font */
+  --fs-h1: clamp(56px, 7vw, 96px);         /* @kind font */
+  --fs-h2: clamp(40px, 5vw, 72px);         /* @kind font */
+  --fs-h3: 32px;                           /* sub-section heading   */
+  --fs-h4: 22px;                           /* card title            */
+  --fs-eyebrow: 14px;                      /* "Cachaça de" label    */
+  --fs-body: 16px;
+  --fs-body-lg: 18px;
+  --fs-meta: 13px;                         /* ml volumes, prices    */
+  --fs-tiny: 11px;                         /* footnotes, *garrafa   */
+
+  --lh-tight: 1.05;   /* @kind font */
+  --lh-snug: 1.2;     /* @kind font */
+  --lh-normal: 1.5;   /* @kind font */
+  --lh-loose: 1.7;    /* @kind font */
+
+  /* ---------- SPACING ---------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+
+  /* ---------- RADIUS ---------- */
+  --radius-sm: 4px;       /* small chips                            */
+  --radius-md: 8px;       /* cards, inputs                          */
+  --radius-lg: 16px;      /* hero cards, modals                     */
+  --radius-pill: 999px;   /* "Mais vendida" yellow disc, CTA pill   */
+
+  /* ---------- SHADOW ---------- */
+  /* Cachaçaria photography is dim, candle-lit. Shadows are soft and
+     warm, not crisp — pulled from the barrel-cellar imagery.        */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.25);
+  --shadow-md: 0 8px 24px rgba(0,0,0,.28);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,.45);
+  --shadow-glow-gold: 0 0 0 4px rgba(244,194,52,.18);
+
+  /* ---------- MOTION ---------- */
+  --ease-out: cubic-bezier(.22,.61,.36,1);      /* @kind other */
+  --ease-in-out: cubic-bezier(.65,0,.35,1);     /* @kind other */
+  --dur-fast: 140ms;                            /* @kind other */
+  --dur-base: 240ms;                            /* @kind other */
+  --dur-slow: 480ms;                            /* @kind other */
+}
+
+/* =====================================================================
+   SEMANTIC TYPE — apply directly to elements, or compose with classes
+   ===================================================================== */
+
+html { font-family: var(--font-sans); color: var(--fg-default); background: var(--bg-page); }
+body { font-size: var(--fs-body); line-height: var(--lh-normal); -webkit-font-smoothing: antialiased; }
+
+h1, .h1 {
+  font-family: var(--font-script);
+  font-size: var(--fs-h1);
+  line-height: var(--lh-tight);
+  font-weight: 400;
+  color: var(--fg-strong);
+  letter-spacing: 0.005em;
+}
+
+h2, .h2 {
+  font-family: var(--font-script);
+  font-size: var(--fs-h2);
+  line-height: var(--lh-tight);
+  font-weight: 400;
+  color: var(--fg-strong);
+}
+
+h3, .h3 {
+  font-family: var(--font-serif);
+  font-size: var(--fs-h3);
+  line-height: var(--lh-snug);
+  font-weight: 500;
+  color: var(--fg-strong);
+}
+
+h4, .h4 {
+  font-family: var(--font-serif);
+  font-size: var(--fs-h4);
+  font-weight: 500;
+  color: var(--fg-strong);
+}
+
+.eyebrow, .label-serif {
+  font-family: var(--font-serif);
+  font-size: var(--fs-eyebrow);
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.01em;
+  color: var(--fg-default);
+}
+
+.quote, .quote-italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: var(--fs-body-lg);
+  line-height: var(--lh-loose);
+  color: var(--fg-default);
+}
+
+.script-display {
+  font-family: var(--font-script);
+  font-size: var(--fs-display);
+  line-height: 1;
+  color: var(--fg-strong);
+}
+
+p { line-height: var(--lh-normal); color: var(--fg-default); max-width: 60ch; }
+.meta { font-size: var(--fs-meta); color: var(--fg-muted); }
+.tiny { font-size: var(--fs-tiny); color: var(--fg-muted); }
+
+/* Section title pattern from the catalog: cursive title underlined
+   with a dotted leader rule — a signature of the brand. Apply to a
+   heading and it gets the dotted underline beneath.                 */
+.title-with-dotted-rule {
+  position: relative;
+  padding-bottom: 0.35em;
+}
+.title-with-dotted-rule::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0; right: 25%;
+  border-bottom: 2px dotted var(--divider-dotted);
+}
+
+.divider-dotted {
+  border: 0;
+  border-top: 2px dotted var(--divider-dotted);
+  margin: var(--space-6) 0;
+}
+
+/* Subtle paper/wood grain — apply to a section wrapper so backgrounds
+   feel tactile and hand-worked rather than flat-vector. Cheap (one
+   inline SVG turbulence filter, no network asset) and very low
+   opacity so it never fights legibility.                             */
+.texture-grain {
+  position: relative;
+}
+.texture-grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAQAElEQVR4Aex9B4BVxdX/b+be+9r029buGtnts6d+3+bWc/rd7q2/1r+1/nq7f929W2u7bXfW1c7ubO+i0k1cRWTPjXeQZHK8//u5du3rvvvuu++6zzz57xhlnvHfffXdcccVK67v55pu7rbfeultvvfW6DTfcsFtvvfW6DTfcsFtvvfW69ddfv1t33XW7ddZZp1trrbW6NddcsxsyZEg3aNCgbuDAgd3AgQP/rq5iZGIa+KsaOK0A+q9qIfbgtNTAyJH5/qoeuQPLy7MnV1UW/qaqPH9rj5Isp0dJptOzLNsJdna26OjoWBONRFZFwuGV7W3h9+F0vVtWlv1Gj7Jctsl/vaqi5PW+vUt/37uq5EVF97RUaEzof7kGYgD9L1dpjOCnRQMjR+b7q3rkDiwvz55cVVn4m6ry/K09SrKcHiWZTs+ybCfY2dmio6NjTTQSWRUJh1e2t4bfh9P1bllZ9hs9ynLZJv/1qoqS1/v2Lv1976qSFxXd01KhMaH/5RqIAfS/XKUxgp8WDYwcme+v6pE7sLw8e3JVZeFvqsrzt/YoyXJ6lGQ6PcuynWBn54rOtrYZHk2cnZqUOCkjLWlSZmbapJLCvIm9yksHVPYqr5hwztkvjx93xusD+vYO9igrLiwpLiwuLs7rW1iQPTonK3NiOtsEAsakzo5Wo6uzY1RXR9v0UGfHgdJi1UeuU9GzYGtRXsqU4oLMib17F08cPHiw8WnRT4yPT78GYgD96R+jGIf/gA==");
+  background-size: 180px 180px;
+}
+
+/* Copper accent link — for hrefs that should read as "hand-crafted"
+   working links (contact details, process callouts) rather than the
+   literal gold price/bestseller stamp.                               */
+.link-copper {
+  color: var(--chero-copper-500);
+  transition: color var(--dur-fast) var(--ease-in-out);
+}
+.link-copper:hover { color: var(--chero-copper-400); }
